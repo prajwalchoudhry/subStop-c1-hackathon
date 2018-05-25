@@ -70,8 +70,7 @@ def setSubscriptions():
             os.remove(filename)
     return Response(status = 200)
 
-@app.route("/createAccount", methods = ['POST']) #username, body (needs customerID)
-def createAccount():
+@app.route("/createAccount", methods = ['POST']) 
     username = getJSON(request.data).get("username")
     body =  getJSON(request.data)
     del body['username']
